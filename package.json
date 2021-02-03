@@ -1,0 +1,21 @@
+{
+  "name": "weather-page",
+  "version": "1.0.0",
+  "description": "weather page using openweathermap.org API",
+  "main": "main.js",
+  "scripts": {
+    "start": "npm run serve",
+    "build": "webpack"
+  },
+  "keywords": [
+    "Weather",
+    "DOM"
+  ],
+  "author": "Johnatan Arango <ingyotis@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.20.0",
+    "webpack-cli": "^4.5.0", 
+    "webpack-dev-server": "^3.11.2"
+  }
+}
