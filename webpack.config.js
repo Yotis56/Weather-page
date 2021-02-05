@@ -1,21 +1,29 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
   },
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-      }
-    ]
+      },
+    ],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public')
-  }
+    
+  }, 
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'weather APP',
+      template: './public/index.html',
+      filename: './index.html'
+    })
+  ]
 };
