@@ -7,6 +7,8 @@
 header {
   margin: auto;
 }
-header .title {
-  color: #0b4152
+header .title__main {
+  color: #0b4152;
+  text-align: center;
+
 }
