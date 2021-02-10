@@ -18,6 +18,9 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
     watchContentBase : true, 
+    watchOptions: {
+      poll: true,
+    },
   }, 
   // plugins: [
   //   new HtmlWebpackPlugin({
