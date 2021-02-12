@@ -4,22 +4,30 @@ import API_KEY from './api_key'
 import renderEtiqueta from './Etiqueta'
 //constantes
 
-const ENTRY_POINT = 'http://api.openweathermap.org/data/2.5/'
+const ENTRY_POINT = 'https://api.openweathermap.org/data/2.5/'
 
-const ciudad = document.querySelector('.search__input').value
+const container = document.querySelector('.content')
+
 
 async function search() {
-  const container = document.querySelector('.content')
   // obtengo el input de busqueda
   const ciudad = document.querySelector('.search__input').value
   // opcional -> obtengo el ID correspondiente a esa ciudad
   // obtengo la información de la API
-  const response = await fetch (`${ENTRY_POINT}weather?q=${ciudad}&appid=${API_KEY}`)
-  const data = await response.json()
-  console.log(data)
+  try {
+    const URL = `${ENTRY_POINT}weather?q=${ciudad}&units=metric&appid=${API_KEY}`
+    console.log(URL)
+    const response = await fetch(URL)
+    const data = await response.json()
+    console.log(data)
+    const etiqueta = renderEtiqueta(data)
+    container.innerHTML = etiqueta
+  } catch (error){
+    console.error('Fetch Error', error)
+  }
 
   // con la información de la API renderizo la etiqueta de clima
-  const etiqueta = await renderEtiqueta(data)
   // pego la información de la etiqueta en el contenido.
-  container.innerHTML = etiqueta
 }
+
+document.querySelector('.search__button').addEventListener('click', search)
