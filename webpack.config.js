@@ -20,8 +20,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'public'),
     watchContentBase : true, 
     watchOptions: {
-      // this option activates live reloading on WSL, but apparently comes with some problems
-      // poll: true,
+      poll: true,
     },
   }, 
   // plugins: [

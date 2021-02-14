@@ -9,7 +9,8 @@ const ENTRY_POINT = 'https://api.openweathermap.org/data/2.5/'
 const container = document.querySelector('.content')
 
 
-async function search() {
+async function search(event) {
+  event.preventDefault()
   // obtengo el input de busqueda
   const ciudad = document.querySelector('.search__input').value
   // opcional -> obtengo el ID correspondiente a esa ciudad
