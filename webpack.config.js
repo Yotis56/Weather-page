@@ -1,5 +1,5 @@
 const path = require('path');
-// const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/index.js',
@@ -16,18 +16,18 @@ module.exports = {
     ],
   },
   devServer: {
-    https: true,
+    open: true,
     contentBase: path.resolve(__dirname, 'public'),
     watchContentBase : true, 
     watchOptions: {
       poll: true,
     },
   }, 
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     title: 'weather APP',
-  //     template: './public/index.html',
-  //     filename: './index.html'
-  //   })
-  // ]
+   plugins: [
+     new HtmlWebpackPlugin({
+       title: 'weather APP',
+       template: './public/index.html',
+       filename: './index.html'
+     })
+   ]
 };

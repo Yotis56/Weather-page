@@ -1,6 +1,6 @@
 //requires
 import './styles.css';
-import API_KEY from './api_key'
+import {API_KEY} from './api_key'
 import renderEtiqueta from './Etiqueta'
 //constantes
 
@@ -16,7 +16,7 @@ async function search(event) {
   // opcional -> obtengo el ID correspondiente a esa ciudad
   // obtengo la información de la API
   try {
-    const URL = `${ENTRY_POINT}weather?q=${ciudad}&units=metric&appid=${API_KEY}`
+    const URL = `${ENTRY_POINT}weather?q=${ciudad}&units=metric&lang=es&appid=${API_KEY}`
     console.log(URL)
     const response = await fetch(URL)
     const data = await response.json()
