@@ -1,7 +1,7 @@
 //requires
 import './styles.css';
 import renderEtiqueta from './Etiqueta'
-const API_KEY = process.env.API_KEY
+const API_KEY = '1398e87212256f8dbf6f3e7deed06876'
 //constantes
 
 const ENTRY_POINT = 'https://api.openweathermap.org/data/2.5/'
@@ -13,15 +13,13 @@ async function search(event) {
   event.preventDefault()
   // obtengo el input de busqueda
   const ciudad = document.querySelector('.search__input').value
-  console.log(API_KEY)
   // opcional -> obtengo el ID correspondiente a esa ciudad
   // obtengo la información de la API
   try {
     const URL = `${ENTRY_POINT}weather?q=${ciudad}&units=metric&lang=es&appid=${API_KEY}`
-    console.log(URL)
+    
     const response = await fetch(URL)
     const data = await response.json()
-    console.log(data)
     const etiqueta = renderEtiqueta(data)
     container.innerHTML = etiqueta
   } catch (error){
