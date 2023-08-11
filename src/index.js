@@ -13,6 +13,7 @@ async function search(event) {
   event.preventDefault()
   // obtengo el input de busqueda
   const ciudad = document.querySelector('.search__input').value
+  console.log(API_KEY)
   // opcional -> obtengo el ID correspondiente a esa ciudad
   // obtengo la información de la API
   try {
