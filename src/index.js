@@ -1,7 +1,7 @@
 //requires
 import './styles.css';
-import {API_KEY} from './api_key'
 import renderEtiqueta from './Etiqueta'
+const API_KEY = require('./api_key.js').API_KEY || process.env.API_KEY
 //constantes
 
 const ENTRY_POINT = 'https://api.openweathermap.org/data/2.5/'
